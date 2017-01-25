@@ -102,6 +102,7 @@ function onWindowResize() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	effect.setSize( window.innerWidth, window.innerHeight );
 }
+onWindowResize()
 
 function animate() {
 	requestAnimationFrame( animate );
@@ -111,7 +112,7 @@ function animate() {
 }
 
 function update(dt) {
-	onWindowResize();
+	// onWindowResize();
 	camera.updateProjectionMatrix();
   controls.update(dt);	
 }
@@ -122,7 +123,7 @@ function render() {
 	// resetPolygonsPositions()
 	mesh1.rotation.x = (time * 0.0075) + (camera.position.y * Math.PI);
 	mesh1.rotation.y = -((time * 0.0045) - (camera.position.x * Math.PI));
-	renderer.render( scene, camera );
+	// renderer.render( scene, camera );
 	effect.render(scene, camera);
 }
 
