@@ -23,11 +23,12 @@ init();
 animate();
 
 function init() {
+	scene = new THREE.Scene();
 	container = document.getElementById( 'container' );
 	//
 	camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.9, 1500 );
 	camera.position.z = 1;
-	scene = new THREE.Scene();
+	scene.add(camera);
 
 	scene.add( new THREE.AmbientLight( 0xffffff ) );
 
