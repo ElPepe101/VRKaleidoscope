@@ -112,18 +112,30 @@ function animate() {
 
 function update(dt) {
 	onWindowResize();
+	camera.updateProjectionMatrix();
   controls.update(dt);	
 }
 
 function render() {
-	camera.updateProjectionMatrix();
 
 	var time = Date.now() * 0.001;
 	// resetPolygonsPositions()
 	mesh1.rotation.x = (time * 0.0075) + (camera.position.y * Math.PI);
 	mesh1.rotation.y = -((time * 0.0045) - (camera.position.x * Math.PI));
-	// renderer.render( scene, camera );
+	renderer.render( scene, camera );
 	effect.render(scene, camera);
+}
+
+function fullscreen() {
+  if (container.requestFullscreen) {
+    container.requestFullscreen();
+  } else if (container.msRequestFullscreen) {
+    container.msRequestFullscreen();
+  } else if (container.mozRequestFullScreen) {
+    container.mozRequestFullScreen();
+  } else if (container.webkitRequestFullscreen) {
+    container.webkitRequestFullscreen();
+  }
 }
 
 function createPolygons () {
