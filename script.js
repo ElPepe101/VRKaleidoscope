@@ -214,4 +214,24 @@ function onDocumentMouseMove( event ) {
 	event.preventDefault();
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+}// colors
+	var vx = ( x / n ) + 0.5;
+	var vy = ( y / n ) + 0.5;
+	var vz = ( z / n ) + 0.5;
+	color.setRGB( vx, vy, vz );
+	colors[ i ]     = color.r;
+	colors[ i + 1 ] = color.g;
+	colors[ i + 2 ] = color.b;
+	colors[ i + 3 ] = color.r;
+	colors[ i + 4 ] = color.g;
+	colors[ i + 5 ] = color.b;
+	colors[ i + 6 ] = color.r;
+	colors[ i + 7 ] = color.g;
+	colors[ i + 8 ] = color.b;
+}
+
+function onDocumentMouseMove( event ) {
+	event.preventDefault();
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
