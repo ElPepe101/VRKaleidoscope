@@ -4,14 +4,14 @@ var camera, scene, renderer;
 var mesh1;
 var clock = new THREE.Clock();
 
-	var triangles = 1000;
+	var triangles = 250;
 	var geometry = new THREE.BufferGeometry();
 	var positions = new Float32Array( triangles * 3 * 3 );
 	var normals = new Float32Array( triangles * 3 * 3 );
 	var colors = new Float32Array( triangles * 3 * 3 );
 	var color = new THREE.Color();
-	var n = 1, n2 = n/2;	// triangles spread in the cube
-	var d = 12, d2 = d/2;	// individual triangle size
+	var n = 4, n2 = n/2;	// triangles spread in the cube
+	var d = 6, d2 = d/2;	// individual triangle size
 	var pA = new THREE.Vector3();
 	var pB = new THREE.Vector3();
 	var pC = new THREE.Vector3();
@@ -27,7 +27,7 @@ function init() {
 	container = document.getElementById( 'container' );
 	//
 	camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.9, 1500 );
-	camera.position.z = 1;
+	camera.position.z = 0;
 	scene.add(camera);
 
 	scene.add( new THREE.AmbientLight( 0xffffff ) );
